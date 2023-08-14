@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dice Challenge</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+    <style>
+      .container {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+      }
+
+      .dice {
+        text-align: center;
+        display: inline-block;
+        margin: 20px;
+
+      }
+
+      body {
+        background-color: #393E46;
+      }
+
+      h1 {
+        margin: 30px;
+        font-family: 'Lobster', cursive;
+        text-shadow: 5px 0 #232931;
+        font-size: 8rem;
+        color: #4ECCA3;
+      }
+
+      p {
+        font-size: 2rem;
+        color: #4ECCA3;
+        font-family: 'Indie Flower', cursive;
+      }
+
+      img {
+        width: 80%;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src=".\images\dice6.png">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src=".\images\dice6.png">
+      </div>
+
+    </div>
+
+    <script>
+      var randomVariable1; 
+      var randomVariable2;
+      randomVariable1 = Math.ceil(Math.random() * 6);
+      document.querySelector('.img1').setAttribute("src", ".\\images\\dice"+randomVariable1+".png");
+      randomVariable2 = Math.ceil(Math.random() * 6);
+      document.querySelector('.img2').setAttribute("src", ".\\images\\dice"+randomVariable2+".png");
+
+      if (randomVariable1 > randomVariable2){
+      document.querySelector('h1').innerHTML = "Player 1 wins";
+      }
+      else if (randomVariable1 === randomVariable2){
+          document.querySelector('h1').innerHTML = "Draw";
+      }
+      else {
+          document.querySelector('h1').innerHTML = "Player 2 wins";
+      }
+
+    </script>
+  </body>
+
+  
+</html>
